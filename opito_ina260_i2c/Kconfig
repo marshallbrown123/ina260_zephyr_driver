@@ -1,0 +1,29 @@
+# Copyright 2021 The Chromium OS Authors
+#
+# SPDX-License-Identifier: Apache-2.0
+menu "Opito INA260 Current Sensor"
+config INA26X
+	bool "INA26X Current and Power Monitor"
+	default y
+	select I2C
+	help
+	  Enable driver for INA26X Current and Power Monitor.
+
+if INA26X
+
+config INA260
+	bool "INA260"
+	default y
+	help
+	  Enable driver for INA260
+
+
+config INA260_TRIGGER
+	bool "INA260 trigger mode"
+	depends on INA260
+	help
+	  Set to enable trigger mode using gpio interrupt, where
+	  interrupts are configured to line ALERT PIN.
+
+endif # INA26X
+endmenu

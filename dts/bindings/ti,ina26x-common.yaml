@@ -1,0 +1,21 @@
+#
+# Copyright 2021 Grinn
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+include: [sensor-device.yaml, i2c-device.yaml]
+
+properties:
+    config:
+      type: int
+      required: true
+      description: |
+        Value of the configuration register
+        e.g shunt voltage and bus voltage ADC conversion
+        times and averaging, operating mode for INA260
+
+    alert-gpios:
+      type: phandle-array
+      required: false
+      description: Alert pin
