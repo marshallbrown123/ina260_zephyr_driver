@@ -19,9 +19,9 @@ add something like this to your overlay
     
    
    and something like this to your application (main.c or whatever)
-    #include "../opito_ina260_i2c/ina260.h"
-    #include "../opito_ina260_i2c/ina26x_common.h"
-
+   
+    #include "ina260.h"
+    #include "ina26x_common.h"
 
     #define MPPT_SOLAR_INA260 DT_NODELABEL(mppt_solar_ina260)
     #if DT_NODE_HAS_STATUS(MPPT_SOLAR_INA260,okay)
